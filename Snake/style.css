@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    /*Background color*/
+    --backgrounfd-color: #302f2f;
+    --fill-clor: rgb(233, 154, 57);
+    --food-color:red;
+
+    /*Border-Radius*/
+    --boder-radius-sm:4px;
+    --boder-radius-md:8px;
+    --boder-radius-lg:12px;
+    --boder-radius-xl:16px;
+    --border-radius-2xl:24px;
+    --border-radius-3xl:32px;
+
+    /*Boder color*/
+    --border-color:#545454;
+
+    /*Font color*/
+    --font-color:#f5f5f5;
+
+    /*Padding*/
+    --padding-sm:4px;
+    --padding-md:8px;
+    --padding-lg:12px;
+    --padding-xl:16px;
+    --padding-2xl:24px;
+    --padding-3xl:32px; 
+
+    /*Space*/
+    --space-sm:4px;
+    --space-md:8px;
+    --space-lg:12px;
+    --space-xl:16px;
+    --space-2xl:24px;
+    --space-3xl:32px;
+
+
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+html{
+    background-color: var(--backgrounfd-color);
+    color: var(--font-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main,section{
+    width: 100%;
+    height: 100%;
+}
+.btn{
+    padding: var(--padding-sm) var(--padding-md);
+    border:none;
+    border-radius: var(--boder-radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+section{
+    padding: var(--padding-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--padding-lg);
+}
+#infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding-lg) 0px;    
+    
+   
+}
+#info{
+    padding: var(--padding-sm) var(--padding-md);
+    border:1px solid var(--border-color);
+     border-radius: var(--boder-radius-sm);
+}
+#board{
+    border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(30px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(30px,1fr));
+    flex-grow: 1;
+}
+#board div{
+    height: 30px;
+    width:30px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}
+.fill{
+    background-color: var(--fill-clor);
+}
+.food{
+    background-color: var(--food-color);
+}
+#model{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #35353587;
+    backdrop-filter:blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#model .start-game,
+#model .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:var(--space-lg) ;
+}
+#model .game-over{
+    display: none;
+}
